@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-  <MemoHeader></MemoHeader>
-  {{ number }}
+    <memo-header></memo-header>
+    <router-view></router-view>
+    <nav>
+      <router-link to="/">一覧</router-link>
+      <router-link to="/add">+</router-link>
+      <router-link to="/update">編集</router-link>
+    </nav>
   </div>
 </template>
 

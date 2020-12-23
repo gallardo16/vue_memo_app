@@ -1,11 +1,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Update from './views/Update.vue'
+import Show from './views/Show.vue'
 import Memos from './views/Memos.vue'
-import Add from './views/Add.vue'
+import Create from './views/Create.vue'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [{ path: '/', component: Memos }, { path: "/add", component: Add }, { path: "/update", component: Update }]
+  mode: "history",
+  routes: [
+    {
+      path: '/',
+      redirect: '/memos'
+    },
+    {
+      path: '/memos',
+      component: Memos
+    },
+    {
+      path: "/memos/create",
+      component: Create
+    },
+    {
+      path: "/memos/:id",
+      component: Show,
+      props: true
+    }
+  ]
 })

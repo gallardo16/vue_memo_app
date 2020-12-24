@@ -1,24 +1,31 @@
 <template>
   <div id="app">
     <memo-header/>
-    <memo-index :memos="memos"></memo-index>
+    <ul>
+      <li v-for="(memo, id) in memosFirstLine" :key="memo">
+      <a :href="/memos/ + id">{{ memo }}</a>
+      </li>
+    </ul>
     <router-view @create-click="createMemo" @update-click="updateMemo" @remove-click="removeMemo" :memos="memos"></router-view>
   </div>
 </template>
 
 <script>
 import MemoHeader from "./components/MemoHeader.vue"
-import MemoIndex from "./components/MemoIndex.vue"
 
 export default {
   components: {
-    MemoHeader,
-    MemoIndex
+    MemoHeader
   },
   data() {
     return {
       memos: [],
       newMemo: ''
+    }
+  },
+  computed: {
+    memosFirstLine () {
+      return this.memos.map(value => value.split('\n')[0])
     }
   },
   mounted () {
@@ -55,5 +62,3 @@ export default {
   }
 }
 </script>
-
-

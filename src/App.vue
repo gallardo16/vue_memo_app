@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <memo-header/>
+    <h1>メモアプリ</h1>
     <ul>
       <li v-for="(memo, id) in memosFirstLine" :key="memo">
       <a :href="/memos/ + id">{{ memo }}</a>
@@ -11,12 +11,7 @@
 </template>
 
 <script>
-import MemoHeader from "./components/MemoHeader.vue"
-
 export default {
-  components: {
-    MemoHeader
-  },
   data() {
     return {
       memos: [],

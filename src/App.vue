@@ -57,3 +57,12 @@ export default {
   }
 }
 </script>
+
+<style>
+ul {
+  background-color: #fff8ef;
+  border-style: solid;
+  border-width: 1px;
+  padding: 25px;
+}
+</style>

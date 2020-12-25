@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h2>メモ作成</h2>
+    <hr>
     <textarea v-model="newMemo"></textarea>
     <button @click="createMemo">作成</button>
   </div>
@@ -7,7 +9,11 @@
 
 <script>
 export default {
-  props: ["newMemo"],
+  data() {
+    return {
+      newMemo: ""
+    }
+  },
   methods: {
     createMemo () {
       this.$emit("create-click", this.newMemo)
@@ -15,14 +21,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-textarea {
-  width: 300px;
-  height: 300px;
-}
-
-button {
-  margin: 3px;
-}
-</style>

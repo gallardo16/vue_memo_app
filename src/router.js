@@ -25,6 +25,10 @@ export default new Router({
       path: "/memos/:id",
       component: Show,
       props: true
+    },
+    {
+      path: "*",
+      redirect: '/memos'
     }
   ]
 })

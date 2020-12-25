@@ -21,14 +21,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-textarea {
-  width: 300px;
-  height: 300px;
-}
-
-button {
-  margin: 3px;
-}
-</style>

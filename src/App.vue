@@ -42,9 +42,13 @@ export default {
       }
     },
     updateMemo (idx, value) {
-      this.memos.splice(idx, 1, value)
-      this.saveMemos()
-      this.$router.push("/")
+      if (!value) {
+        alert("正しく入力してください")
+      } else {
+        this.memos.splice(idx, 1, value)
+        this.saveMemos()
+        this.$router.push("/")
+      }
     },
     removeMemo (idx) {
       this.memos.splice(idx, 1)

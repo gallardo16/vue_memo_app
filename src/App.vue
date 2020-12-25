@@ -19,15 +19,15 @@ export default {
   },
   computed: {
     memosFirstLine () {
-      return this.memos.map(value => value.split('\n')[0])
+      return this.memos.map(value => value.split("\n")[0])
     }
   },
   mounted () {
-    if (localStorage.getItem('memos')) {
+    if (localStorage.getItem("memos")) {
       try {
-        this.memos = JSON.parse(localStorage.getItem('memos'))
+        this.memos = JSON.parse(localStorage.getItem("memos"))
       } catch (e) {
-        localStorage.removeItem('memos')
+        localStorage.removeItem("memos")
       }
     }
   },
@@ -53,7 +53,7 @@ export default {
     },
     saveMemos () {
       const parsed = JSON.stringify(this.memos)
-      localStorage.setItem('memos', parsed)
+      localStorage.setItem("memos", parsed)
     }
   }
 }
